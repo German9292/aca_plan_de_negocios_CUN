@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoreAccess Technology S.A.S. | Seguridad Electrónica Inteligente</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            800: '#003366',
+                            900: '#002244',
+                        },
+                        brand: {
+                            blue: '#004990',
+                            light: '#0071e3',
+                            accent: '#00b4d8',
+                            cyan: '#e0f2fe',
+                            dark: '#0f172a'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-hero {
+            background: linear-gradient(135deg, #001f3f 0%, #004990 50%, #0066cc 100%);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased selection:bg-brand-accent selection:text-white">
+
+    <!-- Top Bar Status / Notice -->
+    <div class="bg-navy-900 text-white text-xs sm:text-sm py-2 px-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span>Atención prioritaria y Diagnóstico Remoto 24/7 disponible para PYMEs y Hogares</span>
+            </div>
+            <div class="hidden md:flex items-center gap-4 text-xs text-gray-300">
+                <span><i class="fa-solid fa-phone text-brand-accent mr-1"></i> Soporte Inmediato</span>
+                <span><i class="fa-solid fa-shield-halved text-brand-accent mr-1"></i> Mantenimiento Garantizado</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-12 h-12 rounded-xl bg-brand-blue flex items-center justify-center text-white text-2xl shadow-lg group-hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-shield-cat"></i>
+                    </div>
+                    <div>
+                        <span class="text-xl font-extrabold text-navy-900 tracking-tight flex items-center gap-1">
+                            CoreAccess <span class="text-brand-light font-normal text-xs px-2 py-0.5 bg-blue-100 text-brand-blue rounded-full">S.A.S.</span>
+                        </span>
+                        <p class="text-[10px] text-gray-500 font-medium tracking-wide uppercase">Technology & Security</p>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav Navigation -->
+                <nav class="hidden lg:flex items-center gap-8 font-medium text-sm text-gray-600">
+                    <a href="#inicio" class="hover:text-brand-blue transition-colors">Inicio</a>
+                    <a href="#diferencial" class="hover:text-brand-blue transition-colors">Por Qué Elegirnos</a>
+                    <a href="#servicios" class="hover:text-brand-blue transition-colors">Servicios</a>
+                    <a href="#planes" class="hover:text-brand-blue transition-colors">Planes y Precios</a>
+                    <a href="#contacto" class="hover:text-brand-blue transition-colors">Contacto</a>
+                </nav>
+
+                <!-- CTA Button Header -->
+                <div class="hidden md:flex items-center gap-4">
+                    <a href="#contacto" class="bg-brand-blue hover:bg-navy-900 text-white font-semibold px-5 py-2.5 rounded-lg shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 text-sm flex items-center gap-2">
+                        <i class="fa-solid fa-headset"></i>
+                        <span>Solicitar Diagnóstico</span>
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <button id="mobileMenuBtn" class="lg:hidden p-2 rounded-lg text-gray-600 hover:text-brand-blue focus:outline-none">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-white border-b border-gray-200 px-4 pt-2 pb-6 space-y-3">
+            <a href="#inicio" class="block text-gray-700 hover:text-brand-blue font-medium py-1">Inicio</a>
+            <a href="#diferencial" class="block text-gray-700 hover:text-brand-blue font-medium py-1">Por Qué Elegirnos</a>
+            <a href="#servicios" class="block text-gray-700 hover:text-brand-blue font-medium py-1">Servicios</a>
+            <a href="#planes" class="block text-gray-700 hover:text-brand-blue font-medium py-1">Planes y Precios</a>
+            <a href="#contacto" class="block text-gray-700 hover:text-brand-blue font-medium py-1">Contacto</a>
+            <a href="#contacto" class="w-full mt-2 bg-brand-blue text-white text-center font-semibold py-2.5 rounded-lg shadow block">
+                Solicitar Diagnóstico Remoto
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="gradient-hero text-white py-16 md:py-24 relative overflow-hidden">
+        <!-- Abstract Shapes -->
+        <div class="absolute top-0 right-0 opacity-10 pointer-events-none transform translate-x-1/4 -translate-y-1/4">
+            <i class="fa-solid fa-shield-halved text-[500px]"></i>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Hero Text -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium border border-white/20">
+                        <i class="fa-solid fa-circle-check text-emerald-400"></i>
+                        <span>Seguridad Inteligente Estés Donde Estés</span>
+                    </div>
+                    
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                        Tu seguridad electrónica nunca se detiene.
+                    </h1>
+                    
+                    <p class="text-lg sm:text-xl text-blue-100 max-w-2xl font-light">
+                        Protegemos hogares y empresas con videovigilancia de alta definición, control de acceso y monitoreo desde tu celular. Eliminamos las esperas con diagnóstico a distancia y soporte técnico en una sola visita.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
+                        <a href="#contacto" class="bg-emerald-500 hover:bg-emerald-600 text-white font-bold px-7 py-3.5 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 text-center flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-calculator"></i>
+                            <span>Cotizar Prototipo / Solución</span>
+                        </a>
+                        <a href="#diferencial" class="bg-white/10 hover:bg-white/20 text-white font-semibold px-7 py-3.5 rounded-xl border border-white/30 backdrop-blur-md text-center transition-all flex items-center justify-center gap-2">
+                            <span>Conocer Modelo 4.0</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+
+                    <!-- Highlights / Badges -->
+                    <div class="pt-8 border-t border-white/10 grid grid-cols-3 gap-4 text-center lg:text-left">
+                        <div>
+                            <p class="text-2xl font-bold text-white">1 Visita</p>
+                            <p class="text-xs text-blue-200">Solución física garantizada</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-bold text-white">100%</p>
+                            <p class="text-xs text-blue-200">Acceso Móvil en tiempo real</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-bold text-white">24/7</p>
+                            <p class="text-xs text-blue-200">Acompañamiento y soporte</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Interactive Card / Preview Mockup -->
+                <div class="lg:col-span-5">
+                    <div class="bg-white text-gray-900 rounded-3xl p-6 shadow-2xl relative border border-gray-100">
+                        <div class="flex items-center justify-between pb-4 border-b border-gray-100">
+                            <div class="flex items-center gap-3">
+                                <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                                <span class="text-xs font-semibold text-gray-500 ml-2">Panel de Control CoreAccess App</span>
+                            </div>
+                            <span class="text-xs bg-emerald-100 text-emerald-800 font-bold px-2 py-0.5 rounded">En vivo</span>
+                        </div>
+                        
+                        <!-- Simulated Camera Feeds Grid -->
+                        <div class="grid grid-cols-2 gap-3 my-4">
+                            <div class="relative bg-gray-900 rounded-lg overflow-hidden h-32 group">
+                                <img src="https://images.unsplash.com/photo-1558036117-15d82a90b9b1?auto=format&fit=crop&w=400&q=80" alt="Cámara Acceso Principal" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform" onerror="this.src='https://placehold.co/400x300/003366/ffffff?text=Camara+01+Entrada'">
+                                <span class="absolute top-2 left-2 bg-black/60 text-white text-[10px] px-2 py-0.5 rounded backdrop-blur-sm">CAM 01 - Entrada</span>
+                                <i class="fa-solid fa-wifi absolute top-2 right-2 text-emerald-400 text-xs"></i>
+                            </div>
+                            <div class="relative bg-gray-900 rounded-lg overflow-hidden h-32 group">
+                                <img src="https://images.unsplash.com/photo-1582139329536-e7284fece509?auto=format&fit=crop&w=400&q=80" alt="Cámara Almacén" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform" onerror="this.src='https://placehold.co/400x300/003366/ffffff?text=Camara+02+Interior'">
+                                <span class="absolute top-2 left-2 bg-black/60 text-white text-[10px] px-2 py-0.5 rounded backdrop-blur-sm">CAM 02 - Local</span>
+                                <i class="fa-solid fa-wifi absolute top-2 right-2 text-emerald-400 text-xs"></i>
+                            </div>
+                        </div>
+
+                        <!-- Status Details -->
+                        <div class="space-y-3 text-xs bg-gray-50 p-3 rounded-xl">
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-600 font-medium"><i class="fa-solid fa-microchip text-brand-blue mr-1"></i> Diagnóstico del sistema:</span>
+                                <span class="text-emerald-600 font-bold">Óptimo (0 Fallas)</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-600 font-medium"><i class="fa-solid fa-clock-rotate-left text-brand-blue mr-1"></i> Último mantenimiento:</span>
+                                <span class="text-gray-800 font-semibold">Al día</span>
+                            </div>
+                        </div>
+
+                        <div class="mt-4 pt-3 border-t border-gray-100 flex items-center justify-between">
+                            <span class="text-xs text-gray-500">¿Necesitas soporte técnico?</span>
+                            <a href="#contacto" class="text-xs text-brand-blue font-bold hover:underline">Activar Asistencia &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problema vs Solución (La Vaca Púrpura / Elemento Diferenciador) -->
+    <section id="diferencial" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-blue font-bold text-sm tracking-wider uppercase bg-blue-50 px-3 py-1 rounded-full">Revolucionando la Seguridad Electrónica</span>
+                <h2 class="text-3xl font-extrabold text-navy-900 mt-3 sm:text-4xl">
+                    De la reacción tardía al soporte inteligente inmediato
+                </h2>
+                <p class="text-gray-600 mt-4 text-lg">
+                    La mayoría de las empresas sufren fallas prolongadas porque los técnicos llegan sin repuestos o tardan días en responder. En CoreAccess transformamos esa experiencia.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+                <!-- Tradicional (El problema) -->
+                <div class="bg-red-50/60 rounded-3xl p-8 border border-red-100 relative flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-red-100 text-red-600 flex items-center justify-center text-xl mb-6">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-red-900 mb-4">El Modelo Tradicional (Deficiente)</h3>
+                        <ul class="space-y-4 text-gray-700 text-sm">
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-xmark text-red-500 mt-1"></i>
+                                <span><strong>Soporte Lento:</strong> Técnicos que tardan días en llegar tras la ocurrencia de la falla.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-xmark text-red-500 mt-1"></i>
+                                <span><strong>Múltiples Visitas:</strong> Llegan sin las herramientas ni componentes adecuados para la revisión inicial.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-xmark text-red-500 mt-1"></i>
+                                <span><strong>Cliente Desinformado:</strong> Sistemas complejos que el usuario no sabe utilizar ni monitorear desde su teléfono.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-red-200 text-xs text-red-700 font-medium">
+                        Resultado: Espacios desprotegidos por días y gastos inesperados.
+                    </div>
+                </div>
+
+                <!-- CoreAccess (La Solución / Vaca Púrpura) -->
+                <div class="bg-blue-900 rounded-3xl p-8 text-white shadow-xl relative flex flex-col justify-between border border-blue-800">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-brand-light text-white flex items-center justify-center text-xl mb-6">
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-4">Propuesta CoreAccess S.A.S.</h3>
+                        <ul class="space-y-4 text-blue-100 text-sm">
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-check text-emerald-400 mt-1"></i>
+                                <span><strong>Diagnóstico Remoto Inmediato:</strong> Analizamos el fallo en la red o software a distancia antes de desplazarnos.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-check text-emerald-400 mt-1"></i>
+                                <span><strong>Solución en 1 Sola Visita:</strong> El técnico acude con el equipamiento exacto diagnosticado previamente.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-check text-emerald-400 mt-1"></i>
+                                <span><strong>Capacitación al Cliente:</strong> Enseñamos a tu personal o familia a resolver desconfiguraciones sencillas al instante.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-blue-700 text-xs text-brand-accent font-semibold flex items-center justify-between">
+                        <span>Tu tranquilidad, nuestra prioridad</span>
+                        <i class="fa-solid fa-shield text-lg"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios Destacados -->
+    <section id="servicios" class="py-20 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-blue font-bold text-sm tracking-wider uppercase bg-white px-3 py-1 rounded-full shadow-sm">Nuestra Oferta de Valor</span>
+                <h2 class="text-3xl font-extrabold text-navy-900 mt-3 sm:text-4xl">
+                    Soluciones integrales de seguridad electrónica
+                </h2>
+                <p class="text-gray-600 mt-4 text-lg">
+                    Diseñadas a la medida de hogares, emprendedores y PYMEs.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Servicio 1 -->
+                <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between group border border-gray-100">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-blue-50 text-brand-blue flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-blue group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-video"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-navy-900 mb-2">Cámaras WiFi & CCTV</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Instalación profesional de videovigilancia IP y analógica con configuración para monitorear en tiempo real desde tu smartphone.
+                        </p>
+                    </div>
+                    <ul class="mt-6 pt-4 border-t border-gray-100 text-xs text-gray-500 space-y-2">
+                        <li><i class="fa-solid fa-circle-dot text-brand-blue text-[8px] mr-1"></i> Visión nocturna en HD</li>
+                        <li><i class="fa-solid fa-circle-dot text-brand-blue text-[8px] mr-1"></i> Grabación en nube o disco local</li>
+                    </ul>
+                </div>
+
+                <!-- Servicio 2 -->
+                <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between group border border-gray-100">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-blue-50 text-brand-blue flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-blue group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-id-card-clip"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-navy-900 mb-2">Control de Acceso & Portería</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Sistemas de videoporteros inteligentes, acceso biométrico, tarjetas RFID y automatización de entradas para residencias y locales.
+                        </p>
+                    </div>
+                    <ul class="mt-6 pt-4 border-t border-gray-100 text-xs text-gray-500 space-y-2">
+                        <li><i class="fa-solid fa-circle-dot text-brand-blue text-[8px] mr-1"></i> Apertura remota vía App</li>
+                        <li><i class="fa-solid fa-circle-dot text-brand-blue text-[8px] mr-1"></i> Registro de entradas/salidas</li>
+                    </ul>
+                </div>
+
+                <!-- Servicio 3 -->
+                <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between group border border-gray-100">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-blue-50 text-brand-blue flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-blue group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-wrench"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-navy-900 mb-2">Mantenimiento & Soporte</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Planes preventivos y correctivos para asegurar que tus equipos nunca fallen cuando más los necesitas.
+                        </p>
+                    </div>
+                    <ul class="mt-6 pt-4 border-t border-gray-100 text-xs text-gray-500 space-y-2">
+                        <li><i class="fa-solid fa-circle-dot text-brand-blue text-[8px] mr-1"></i> Revisión periódica de cableado</li>
+                        <li><i class="fa-solid fa-circle-dot text-brand-blue text-[8px] mr-1"></i> Limpieza y recalibración</li>
+                    </ul>
+                </div>
+
+                <!-- Servicio 4 -->
+                <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between group border border-gray-100">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-blue-50 text-brand-blue flex items-center justify-center text-2xl mb-6 group-hover:bg-brand-blue group-hover:text-white transition-colors">
+                            <i class="fa-solid fa-sliders"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-navy-900 mb-2">Asesoría & Configuración</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Acompañamiento personalizado. Evaluamos tu espacio y presupuesto para recomendarte la alternativa idónea sin sobrecostos.
+                        </p>
+                    </div>
+                    <ul class="mt-6 pt-4 border-t border-gray-100 text-xs text-gray-500 space-y-2">
+                        <li><i class="fa-solid fa-circle-dot text-brand-blue text-[8px] mr-1"></i> Diagnóstico de cobertura</li>
+                        <li><i class="fa-solid fa-circle-dot text-brand-blue text-[8px] mr-1"></i> Capacitación presencial/virtual</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Simulación Interactiva / Calculadora de Seguridad (MVP interactivo) -->
+    <section class="py-16 bg-navy-900 text-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-r from-brand-blue to-navy-800 rounded-3xl p-8 sm:p-12 shadow-2xl border border-blue-700/40">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-7 space-y-4">
+                        <span class="bg-emerald-500 text-white text-xs font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">Herramienta Interactiva</span>
+                        <h3 class="text-2xl sm:text-3xl font-bold">Calcula tu plan estimado de instalación y soporte</h3>
+                        <p class="text-blue-100 text-sm">Selecciona las necesidades de tu espacio para obtener una estimación aproximada.</p>
+                        
+                        <div class="space-y-4 pt-4">
+                            <div>
+                                <label class="block text-xs font-semibold mb-2">Tipo de Inmueble:</label>
+                                <select id="calcType" class="w-full bg-white text-gray-800 rounded-lg p-3 text-sm font-medium focus:ring-2 focus:ring-emerald-400 outline-none">
+                                    <option value="hogar">Hogar / Casa / Departamento</option>
+                                    <option value="pyme">Pequeño Negocio / Local Comercial</option>
+                                    <option value="empresa">Empresa / Oficina Mediana</option>
+                                </select>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-xs font-semibold mb-2">Cantidad de Cámaras requeridas:</label>
+                                <div class="flex items-center gap-4">
+                                    <input type="range" id="calcCamaras" min="1" max="16" value="4" class="w-full accent-emerald-400 h-2 bg-blue-900 rounded-lg appearance-none cursor-pointer">
+                                    <span id="camarasVal" class="text-lg font-bold bg-white/20 px-3 py-1 rounded">4 Cámaras</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-5 bg-white text-navy-900 p-6 rounded-2xl shadow-lg text-center space-y-4">
+                        <span class="text-xs text-gray-500 uppercase font-bold tracking-wider">Estimado Sugerido</span>
+                        <div class="text-3xl font-extrabold text-brand-blue" id="estimatedPrice">
+                            $450.000 COP
+                        </div>
+                        <p class="text-xs text-gray-500" id="calcDescription">Incluye configuración remota, visualización en smartphone y soporte de instalación.</p>
+                        
+                        <a href="#contacto" class="block w-full bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3 rounded-xl transition text-sm">
+                            Solicitar Cotización Oficial
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Planes y Estrategia de Mantenimiento -->
+    <section id="planes" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-blue font-bold text-sm tracking-wider uppercase bg-blue-50 px-3 py-1 rounded-full">Precios Basados en Valor</span>
+                <h2 class="text-3xl font-extrabold text-navy-900 mt-3 sm:text-4xl">
+                    Planes de servicio y mantenimiento continuo
+                </h2>
+                <p class="text-gray-600 mt-4 text-lg">
+                    Sin sorpresas en costos. Elige el esquema que mejor se adapta a tus requerimientos.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Plan 1 -->
+                <div class="border border-gray-200 rounded-3xl p-8 hover:border-brand-blue transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold text-navy-900">Plan Residencial</h3>
+                        <p class="text-xs text-gray-500 mt-1">Ideal para casas y departamentos</p>
+                        <div class="my-6">
+                            <span class="text-3xl font-extrabold text-navy-900">$450.000</span>
+                            <span class="text-gray-500 text-xs">/ proyecto base</span>
+                        </div>
+                        <ul class="space-y-3 text-sm text-gray-600 mb-8">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Instalación de 2 a 4 cámaras WiFi/IP</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Configuración móvil inmediata</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Capacitación rápida de uso</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Soporte remoto mensual básico</li>
+                        </ul>
+                    </div>
+                    <a href="#contacto" class="w-full bg-gray-100 hover:bg-brand-blue hover:text-white text-navy-900 text-center font-bold py-3 rounded-xl transition text-sm">
+                        Elegir Plan Residencial
+                    </a>
+                </div>
+
+                <!-- Plan 2 (Destacado) -->
+                <div class="border-2 border-brand-blue bg-blue-50/30 rounded-3xl p-8 relative flex flex-col justify-between shadow-lg">
+                    <span class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-brand-blue text-white text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wider">Más Popular</span>
+                    <div>
+                        <h3 class="text-xl font-bold text-navy-900">Plan PYME Activa</h3>
+                        <p class="text-xs text-gray-500 mt-1">Para locales comerciales y oficinas</p>
+                        <div class="my-6">
+                            <span class="text-3xl font-extrabold text-brand-blue">$850.000</span>
+                            <span class="text-gray-500 text-xs">/ proyecto inicial</span>
+                        </div>
+                        <ul class="space-y-3 text-sm text-gray-700 mb-8">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Sistema CCTV 4 a 8 Cámaras HD</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Configuración NVR/DVR + Cloud</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Diagnóstico remoto 24/7</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> 1 Visita de mantenimiento correctivo/mes</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Control de acceso básico</li>
+                        </ul>
+                    </div>
+                    <a href="#contacto" class="w-full bg-brand-blue hover:bg-navy-900 text-white text-center font-bold py-3 rounded-xl transition shadow text-sm">
+                        Elegir Plan PYME
+                    </a>
+                </div>
+
+                <!-- Plan 3 -->
+                <div class="border border-gray-200 rounded-3xl p-8 hover:border-brand-blue transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold text-navy-900">Plan Corporativo</h3>
+                        <p class="text-xs text-gray-500 mt-1">Soluciones a medida para alto volumen</p>
+                        <div class="my-6">
+                            <span class="text-3xl font-extrabold text-navy-900">Personalizado</span>
+                        </div>
+                        <ul class="space-y-3 text-sm text-gray-600 mb-8">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Infraestructura de red & CCTV avanzada</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Biometría y videoporteros multi-usuario</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Mantenimiento preventivo recurrente</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> SLA de atención en tiempo récord</li>
+                        </ul>
+                    </div>
+                    <a href="#contacto" class="w-full bg-gray-100 hover:bg-brand-blue hover:text-white text-navy-900 text-center font-bold py-3 rounded-xl transition text-sm">
+                        Contactar Asesor Senior
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Preguntas Frecuentes (Acordeón JS) -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl font-extrabold text-center text-navy-900 mb-8">Preguntas Frecuentes</h2>
+            
+            <div class="space-y-4">
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                    <button class="faq-toggle w-full text-left p-4 font-semibold text-navy-900 flex justify-between items-center focus:outline-none">
+                        <span>¿Qué sucede si mis cámaras dejan de verse en el celular?</span>
+                        <i class="fa-solid fa-chevron-down text-brand-blue transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden p-4 text-sm text-gray-600 border-t border-gray-100 bg-gray-50">
+                        Realizamos un diagnóstico a distancia inmediato para verificar la red de internet o router. En el 80% de los casos lo guiamos para resolverlo al instante; de no ser así, programamos la visita técnica con los equipos requeridos.
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                    <button class="faq-toggle w-full text-left p-4 font-semibold text-navy-900 flex justify-between items-center focus:outline-none">
+                        <span>¿Ustedes venden los equipos o solo realizan la instalación?</span>
+                        <i class="fa-solid fa-chevron-down text-brand-blue transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden p-4 text-sm text-gray-600 border-t border-gray-100 bg-gray-50">
+                        Ofrecemos la solución completa (modelo híbrido): vendemos cámaras y equipos de alta calidad de fabricantes aliados, nos encargamos del montaje, la configuración y el soporte continuo.
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                    <button class="faq-toggle w-full text-left p-4 font-semibold text-navy-900 flex justify-between items-center focus:outline-none">
+                        <span>¿Qué ventajas ofrece CoreAccess frente a marcas tradicionales grandes?</span>
+                        <i class="fa-solid fa-chevron-down text-brand-blue transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden p-4 text-sm text-gray-600 border-t border-gray-100 bg-gray-50">
+                        Brindamos atención personalizada directa, tiempos de respuesta ultra rápidos sin trámites burocráticos y soluciones flexibles que se adaptan exactamente a tu presupuesto real.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulario de Contacto / Cotización -->
+    <section id="contacto" class="py-20 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <!-- Info Contacto -->
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-brand-blue font-bold text-sm tracking-wider uppercase bg-blue-50 px-3 py-1 rounded-full">Contáctanos</span>
+                    <h2 class="text-3xl font-extrabold text-navy-900 sm:text-4xl">
+                        Protege lo que más importa con profesionales
+                    </h2>
+                    <p class="text-gray-600 leading-relaxed text-sm sm:text-base">
+                        Déjanos tus datos para agendar una evaluación diagnóstica de tus espacios o dar respuesta a tus preguntas sobre videovigilancia y control de acceso.
+                    </p>
+
+                    <div class="space-y-4 pt-4">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-blue-50 text-brand-blue flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-building"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-navy-900 text-sm">Empresa</h4>
+                                <p class="text-xs text-gray-600">CoreAccess Technology S.A.S.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-blue-50 text-brand-blue flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-navy-900 text-sm">Correo Electrónico</h4>
+                                <p class="text-xs text-gray-600">contacto@coreaccesstechnology.com</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-blue-50 text-brand-blue flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-headset"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-navy-900 text-sm">Atención Móvil / WhatsApp</h4>
+                                <p class="text-xs text-gray-600">+57 (300) 123-4567</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formulario -->
+                <div class="lg:col-span-7">
+                    <div class="bg-gray-50 rounded-3xl p-8 border border-gray-200 shadow-sm">
+                        <h3 class="text-xl font-bold text-navy-900 mb-6">Solicitud de Diagnóstico / Cotización</h3>
+                        
+                        <form id="contactForm" class="space-y-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-semibold text-gray-700 mb-1">Nombre Completo *</label>
+                                    <input type="text" required class="w-full bg-white border border-gray-300 rounded-lg p-3 text-sm focus:ring-2 focus:ring-brand-blue outline-none" placeholder="Ej. Juan Pérez">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-gray-700 mb-1">Teléfono / WhatsApp *</label>
+                                    <input type="tel" required class="w-full bg-white border border-gray-300 rounded-lg p-3 text-sm focus:ring-2 focus:ring-brand-blue outline-none" placeholder="Ej. 3001234567">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-semibold text-gray-700 mb-1">Correo Electrónico *</label>
+                                    <input type="email" required class="w-full bg-white border border-gray-300 rounded-lg p-3 text-sm focus:ring-2 focus:ring-brand-blue outline-none" placeholder="correo@ejemplo.com">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-gray-700 mb-1">Tipo de Servicio Requerido</label>
+                                    <select class="w-full bg-white border border-gray-300 rounded-lg p-3 text-sm focus:ring-2 focus:ring-brand-blue outline-none">
+                                        <option>Instalación de Cámaras (CCTV/WiFi)</option>
+                                        <option>Control de Acceso / Biometría</option>
+                                        <option>Diagnóstico y Mantenimiento Técnico</option>
+                                        <option>Asesoría General</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-700 mb-1">Detalles de la solicitud</label>
+                                <textarea rows="4" class="w-full bg-white border border-gray-300 rounded-lg p-3 text-sm focus:ring-2 focus:ring-brand-blue outline-none" placeholder="Describe brevemente el espacio que deseas proteger..."></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full bg-brand-blue hover:bg-navy-900 text-white font-bold py-3.5 rounded-xl shadow-md transition duration-200 text-sm flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-paper-plane"></i>
+                                <span>Enviar Solicitud de Diagnóstico</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Notification System (Replaces Alert) -->
+    <div id="modalNotice" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-md w-full p-6 text-center space-y-4 shadow-2xl transform transition-all">
+            <div class="w-16 h-16 bg-emerald-100 text-emerald-500 rounded-full flex items-center justify-center mx-auto text-3xl">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h3 class="text-xl font-bold text-navy-900" id="modalTitle">¡Solicitud Recibida!</h3>
+            <p class="text-sm text-gray-600" id="modalMessage">Hemos registrado tus datos. Un asesor técnico de CoreAccess Technology S.A.S. se comunicará contigo a la brevedad.</p>
+            <button id="closeModalBtn" class="w-full bg-brand-blue text-white font-semibold py-2.5 rounded-xl hover:bg-navy-900 transition">
+                Entendido
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-navy-900 text-gray-300 py-12 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <!-- Col 1 -->
+                <div class="space-y-4 md:col-span-1">
+                    <div class="flex items-center gap-2">
+                        <div class="w-8 h-8 rounded-lg bg-brand-light flex items-center justify-center text-white text-lg">
+                            <i class="fa-solid fa-shield-cat"></i>
+                        </div>
+                        <span class="text-lg font-extrabold text-white">CoreAccess</span>
+                    </div>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        CoreAccess Technology S.A.S. - Soluciones integrales en videovigilancia, seguridad electrónica y control de acceso inteligente.
+                    </p>
+                </div>
+
+                <!-- Col 2 -->
+                <div>
+                    <h4 class="text-white font-semibold text-sm mb-4">Navegación</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#inicio" class="hover:text-white transition">Inicio</a></li>
+                        <li><a href="#diferencial" class="hover:text-white transition">Por Qué Elegirnos</a></li>
+                        <li><a href="#servicios" class="hover:text-white transition">Servicios</a></li>
+                        <li><a href="#planes" class="hover:text-white transition">Planes y Precios</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3 -->
+                <div>
+                    <h4 class="text-white font-semibold text-sm mb-4">Servicios</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li>Instalación de Cámaras WiFi y CCTV</li>
+                        <li>Videoporteros & Biometría</li>
+                        <li>Mantenimiento Preventivo / Correctivo</li>
+                        <li>Diagnóstico Técnico Remoto</li>
+                    </ul>
+                </div>
+
+                <!-- Col 4 -->
+                <div>
+                    <h4 class="text-white font-semibold text-sm mb-4">Síguenos</h4>
+                    <div class="flex gap-3 text-lg">
+                        <a href="#" class="w-9 h-9 rounded-lg bg-white/10 hover:bg-brand-light flex items-center justify-center transition text-white"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-lg bg-white/10 hover:bg-brand-light flex items-center justify-center transition text-white"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-lg bg-white/10 hover:bg-brand-light flex items-center justify-center transition text-white"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-lg bg-white/10 hover:bg-brand-light flex items-center justify-center transition text-white"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-gray-800 flex flex-col sm:flex-row justify-between items-center text-xs text-gray-500 gap-4">
+                <p>&copy; 2026 CoreAccess Technology S.A.S. Todos los derechos reservados.</p>
+                <p>Tu tranquilidad, nuestra prioridad.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Interactions -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Interactive Calculator
+        const calcCamaras = document.getElementById('calcCamaras');
+        const camarasVal = document.getElementById('camarasVal');
+        const calcType = document.getElementById('calcType');
+        const estimatedPrice = document.getElementById('estimatedPrice');
+        const calcDescription = document.getElementById('calcDescription');
+
+        function updateCalculator() {
+            const count = parseInt(calcCamaras.value);
+            const type = calcType.value;
+            camarasVal.textContent = `${count} Cámaras`;
+
+            let base = 250000;
+            let perCam = 85000;
+            let desc = "Ideal para monitoreo continuo desde el móvil.";
+
+            if (type === 'pyme') {
+                base = 450000;
+                perCam = 110000;
+                desc = "Incluye DVR/NVR, cableado estructurado y soporte remoto.";
+            } else if (type === 'empresa') {
+                base = 750000;
+                perCam = 140000;
+                desc = "Incluye alta capacidad de almacenamiento y control de accesos.";
+            }
+
+            const total = base + (count * perCam);
+            estimatedPrice.textContent = `$${total.toLocaleString('es-CO')} COP`;
+            calcDescription.textContent = desc;
+        }
+
+        calcCamaras.addEventListener('input', updateCalculator);
+        calcType.addEventListener('change', updateCalculator);
+
+        // Accordion FAQ Toggle
+        document.querySelectorAll('.faq-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('i');
+                
+                content.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+
+        // Contact Form Submission & Modal Handling
+        const contactForm = document.getElementById('contactForm');
+        const modalNotice = document.getElementById('modalNotice');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            modalNotice.classList.remove('hidden');
+            contactForm.reset();
+        });
+
+        closeModalBtn.addEventListener('click', () => {
+            modalNotice.classList.add('hidden');
+        });
+
+        // Close Modal on Overlay Click
+        modalNotice.addEventListener('click', (e) => {
+            if (e.target === modalNotice) {
+                modalNotice.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
